@@ -1,21 +1,26 @@
 <nav>
-    <button (click)="showSide = !showSide">BOTON</button>
+    <button (click)="showSide = !showSide">
+        <span *ngIf="!showSide" class="material-symbols-outlined">menu</span>
+        <span *ngIf="showSide"  class="material-symbols-outlined">close</span>
+    </button>
 </nav>
 
 <div class="side-bar" [id]="showSide && 'show'">
-    <h4>Menú</h4>
-    <ul>
-        <li><span class="material-symbols-outlined">
-            sync
-            </span>Convertir</li>
-        <li><span class="material-symbols-outlined">
-            schedule
-            </span>Historial</li>
-        <li><span class="material-symbols-outlined">
-            person
-            </span>Mi perfil</li>
-        <li><span class="material-symbols-outlined">
-            payments
-            </span>Planes</li>
-    </ul>
+    <div class="side-bar-content">
+        <h4>Menú</h4>
+        <ul>
+            <li class="side-bar-item"><span class="material-symbols-outlined">
+                    sync
+                </span>Convertir</li>
+            <li class="side-bar-item"><span class="material-symbols-outlined">
+                    schedule
+                </span>Historial</li>
+            <li class="side-bar-item"><span class="material-symbols-outlined">
+                    person
+                </span>Mi perfil</li>
+            <li class="side-bar-item"><span class="material-symbols-outlined">
+                    payments
+                </span>Planes</li>
+        </ul>
+    </div>
 </div>

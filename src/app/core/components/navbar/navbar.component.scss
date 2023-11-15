@@ -1,10 +1,32 @@
 @import 'src/assets/styles/variables.scss';
 nav {
     width: 100%;
-    padding: 10px 20px;
     display: flex;
     align-items: center;
     background-color: $base-color;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px 10px;
+    span {
+        font-size: 30px;
+        color: #fff;
+    }
+}
+
+.side-bar-content {
+    width: 85%;
+    margin: 20px auto;
+
+    h4 {
+        color: #758DFF;
+        font-size: 19px;
+        margin-left: 12px;
+        margin-bottom: 14px;
+    }
 }
 
 .side-bar {
@@ -16,11 +38,18 @@ nav {
     transition: transform 0.3s ease-in-out;
 }
 
-li {
+.side-bar-item {
     display: flex;
     align-items: center;
     column-gap: 10px;
     color: #fff;
+    padding: 10px 10px;
+}
+
+.side-bar-item:hover {
+    background-color: $base-color-dark;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 #show {
@@ -29,7 +58,7 @@ li {
 
 @media screen and (min-width: 600px) {
     .side-bar {
-        width: 20vw;
+        width: 25vw;
     }
     
 }
