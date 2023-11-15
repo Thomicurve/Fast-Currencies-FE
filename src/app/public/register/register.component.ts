@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Register } from '../models/register.model';
 
 @Component({
   selector: 'register',
@@ -7,5 +8,10 @@ import { Component } from '@angular/core';
 })
 
 export class RegisterComponent {
+  registerInput: Register = new Register();
 
+
+  register() {
+    
+  }
 }

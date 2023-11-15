@@ -1,1 +1,25 @@
-<h1>Login</h1>
+<h4>Login</h4>
+<div class="form-container">
+  <form #loginForm="ngForm" (ngSubmit)="login()">
+    <div class="width-100">
+      <input-editor 
+        name="email" 
+        type="email" 
+        [isRequired]="true"
+        [(inputValue)]="loginInput.email"
+        label="Email"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="password" 
+        type="password" 
+        [isRequired]="true"
+        [(inputValue)]="loginInput.password"
+        label="Contraseña"
+        ></input-editor>
+    </div>
+    <p>No posees una cuenta? Creala aqui.</p>
+    <button type="submit">Enviar</button>
+  </form>
+</div>

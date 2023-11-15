@@ -18,6 +18,11 @@ const routes: Routes = [
     path: '',
     canActivate: [UserLoggedGuard],
     loadChildren: () => import('./user/user-routing.module').then(m => m.UserRoutingModule)
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: 'auth',
   }
 ];
 

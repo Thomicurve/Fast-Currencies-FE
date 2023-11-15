@@ -1,1 +1,41 @@
-<h1>Register</h1>
+<h4>Register</h4>
+<div class="form-container">
+  <form #loginForm="ngForm" (ngSubmit)="register()">
+    <div class="width-100">
+      <input-editor 
+        name="name" 
+        [isRequired]="true"
+        [(inputValue)]="registerInput.name"
+        label="Nombre completo"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="email" 
+        type="email"
+        [isRequired]="true"
+        [(inputValue)]="registerInput.email"
+        label="Email"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="password" 
+        type="password" 
+        [isRequired]="true"
+        [(inputValue)]="registerInput.password"
+        label="Contraseña"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="confirmPassword" 
+        type="password" 
+        [isRequired]="true"
+        [(inputValue)]="registerInput.confirmPassword"
+        label="Repita la contraseña"
+        ></input-editor>
+    </div>
+    <button type="submit">Enviar</button>
+  </form>
+</div>

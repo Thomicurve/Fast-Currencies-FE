@@ -1,8 +1,9 @@
 <nav>
-    <button (click)="showSide = !showSide">
+    <button *ngIf="userIsLogged" (click)="showSide = !showSide">
         <span *ngIf="!showSide" class="material-symbols-outlined">menu</span>
-        <span *ngIf="showSide"  class="material-symbols-outlined">close</span>
+        <span *ngIf="showSide" class="material-symbols-outlined">close</span>
     </button>
+    <h2 class="app-title">FastCurrencies</h2>
 </nav>
 
 <div class="side-bar" [id]="showSide && 'show'">

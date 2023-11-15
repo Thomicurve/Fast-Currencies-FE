@@ -1,0 +1,26 @@
+@import 'src/assets/styles/variables.scss';
+
+label {
+  color: #fff;
+  display: block;
+}
+
+input {
+  border: none;
+  height: 40px;
+  padding: 5px 10px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.error-message-container {
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: #200449;
+  font-size: 13px;
+  font-weight: bold;
+}

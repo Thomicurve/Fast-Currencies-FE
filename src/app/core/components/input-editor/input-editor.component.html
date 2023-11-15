@@ -1,0 +1,16 @@
+<ng-container>
+  <label [for]="name">{{label}}</label>
+  <input [name]="name" 
+    [required]="isRequired" 
+    [type]="type" 
+    [(ngModel)]="inputValue" 
+    #editor
+    #model="ngModel"
+    (ngModelChange)="inputValueChange.emit(inputValue)"/>
+  <div class="error-message-container">
+    <span class="error-message" *ngIf="editor.required && !editor.value && model.control.touched">
+      El campo '{{label}}' es requerido
+    </span>
+  </div>
+</ng-container>
+

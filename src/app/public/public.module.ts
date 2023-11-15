@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PublicRoutingModule } from './public-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { InputEditorComponent } from '../core/components/input-editor/input-editor.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +15,9 @@ import { LoginComponent } from './login/login.component';
   ],
   imports: [
     CommonModule,
-    PublicRoutingModule
-  ]
+    PublicRoutingModule,
+    InputEditorComponent,
+    FormsModule
+  ],
 })
 export class PublicModule { }

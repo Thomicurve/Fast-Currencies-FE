@@ -1,0 +1,53 @@
+@import 'src/assets/styles/variables.scss';
+form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+
+h4 {
+  width: 100%;
+  font-size: 40px;
+  color: $base-color-light;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.form-container {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin: 10px auto;
+  background: linear-gradient(to right, $base-color, $base-color-light);
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: $base-color-darker;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 25px 0px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+button:hover {
+  filter: brightness(0.8);
+}
+
+p {
+  margin-top: 20px;
+  width: 100%;
+  color: #fff;
+  font-size: 13px;
+  text-align: center;
+}
