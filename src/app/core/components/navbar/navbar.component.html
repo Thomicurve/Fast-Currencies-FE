@@ -1,0 +1,21 @@
+<nav>
+    <button (click)="showSide = !showSide">BOTON</button>
+</nav>
+
+<div class="side-bar" [id]="showSide && 'show'">
+    <h4>Menú</h4>
+    <ul>
+        <li><span class="material-symbols-outlined">
+            sync
+            </span>Convertir</li>
+        <li><span class="material-symbols-outlined">
+            schedule
+            </span>Historial</li>
+        <li><span class="material-symbols-outlined">
+            person
+            </span>Mi perfil</li>
+        <li><span class="material-symbols-outlined">
+            payments
+            </span>Planes</li>
+    </ul>
+</div>

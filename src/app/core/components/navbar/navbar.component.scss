@@ -1,0 +1,35 @@
+@import 'src/assets/styles/variables.scss';
+nav {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    background-color: $base-color;
+}
+
+.side-bar {
+    background-color: $base-color-darker;
+    position: fixed;
+    height: 100vh;
+    width: 350px;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: #fff;
+}
+
+#show {
+    transform: translateX(0);
+}
+
+@media screen and (min-width: 600px) {
+    .side-bar {
+        width: 20vw;
+    }
+    
+}
