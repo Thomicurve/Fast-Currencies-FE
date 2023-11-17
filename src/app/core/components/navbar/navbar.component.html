@@ -6,6 +6,7 @@
     <h2 class="app-title">FastCurrencies</h2>
 </nav>
 
+<div (click)="showSide = false" *ngIf="showSide" class="background-dark"></div>
 <div class="side-bar" [id]="showSide && 'show'">
     <div class="side-bar-content">
         <h4>Menú</h4>
