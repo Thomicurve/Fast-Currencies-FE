@@ -7,6 +7,7 @@ import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { PublicModule } from './public/public.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserModule } from './user/user.module';
     AdminModule,
     UserModule,
     NavbarComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,0 +1,16 @@
+@import 'src/assets/styles/variables.scss';
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 15px;
+  color: #fff;
+  box-sizing: border-box;
+  background-color: $base-color-darker;
+}
+
+footer p {
+  font-size: 12px;
+  text-align: center;
+}
