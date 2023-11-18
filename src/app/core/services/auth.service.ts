@@ -6,6 +6,7 @@ export class AuthService {
   private token = new BehaviorSubject<string>('');
   public token$ = this.token.asObservable();
 
+
   constructor() {
     this.token.next(localStorage.getItem('token') || '');
   }
@@ -16,6 +17,10 @@ export class AuthService {
 
   isLogged(): boolean {
     return this.token.value.length > 0;
+  }
+
+  isAdmin(): boolean {
+    return false;
   }
 
   logout() {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLoggedGuard } from './core/guards/user-logged.guard';
 import { UserNoLoggedGuard } from './core/guards/user-no-logged.guard';
+import { AdminGuard } from './core/guards/admin.guard';
 
 const routes: Routes = [
   {
@@ -11,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    canActivate: [UserLoggedGuard],
+    canActivate: [UserLoggedGuard, AdminGuard],
     loadChildren: () => import('./admin/admin-routing.module').then(m => m.AdminRoutingModule)
   },
   {

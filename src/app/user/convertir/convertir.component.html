@@ -1,0 +1,39 @@
+<h4>Convertir</h4>
+<div class="convertidor-container">
+  <form autocomplete="off">
+    <div class="selector-form">
+      <select name="currencies" class="currency-selector">
+        <option value>Tipo de moneda a convertir</option>
+        <option value="dolar">dolar</option>
+        <option value="euro">euro</option>
+        <option value="peso">peso</option>
+      </select>
+      <input-editor
+        placeholder="Valor"
+        type="number"
+        [(inputValue)]="currencyValueFrom"></input-editor>
+    </div>
+    <div class="convert-button-container">
+      <button type="button"><span id="swap-icon" class="material-symbols-outlined">
+          swap_horiz
+        </span></button>
+    </div>
+    <div class="selector-form">
+      <select name="currencies" class="currency-selector">
+        <option value>Tipo de moneda a convertir</option>
+        <option value="dolar">dolar</option>
+        <option value="euro">euro</option>
+        <option value="peso">peso</option>
+      </select>
+      <input-editor
+        placeholder="Valor"
+        type="number" [(inputValue)]="currencyValueTo"></input-editor>
+    </div>
+  </form>
+  <div class="result-container">
+    <p>Resultado</p>
+    <div class="result-text">
+      {{currencyResult}}
+    </div>
+  </div>
+</div>

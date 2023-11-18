@@ -7,6 +7,15 @@
     font-family: 'Poppins', sans-serif;
 }
 
+h4 {
+    width: 100%;
+    font-size: 40px;
+    color: $base-color-light;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
 body {
     background-color: $base-color-dark;
 }

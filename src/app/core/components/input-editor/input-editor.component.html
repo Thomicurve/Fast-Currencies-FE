@@ -1,8 +1,10 @@
 <ng-container>
   <label [for]="name">{{label}}</label>
   <input [name]="name" 
+    [disabled]="!editable"
     [required]="isRequired" 
     [type]="type" 
+    [placeholder]="placeholder"
     [(ngModel)]="inputValue" 
     #editor
     #model="ngModel"

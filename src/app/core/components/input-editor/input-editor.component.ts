@@ -16,6 +16,7 @@ export class InputEditorComponent {
   @Input() type: string = 'text';
   @Input() placeholder: string = '';
   @Input() isRequired: boolean = false;
+  @Input() editable: boolean = true;
 
   @Input() inputValue: string = "";
   @Output() inputValueChange = new EventEmitter<string>();
