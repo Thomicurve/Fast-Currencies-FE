@@ -10,7 +10,12 @@ footer {
   background-color: $base-color-darker;
 }
 
-footer p {
+p {
   font-size: 12px;
   text-align: center;
+}
+
+p:last-child {
+  font-size: 10px;
+  color: #ccc;
 }

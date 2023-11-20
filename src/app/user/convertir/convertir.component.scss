@@ -5,16 +5,16 @@
   margin: 50px auto;
 }
 
-img {
-  width: 100px;
-}
-
 
 .selector-form {
   display: flex;
   column-gap: 10px;
   align-items: baseline;
   margin: 30px 0px;
+
+  &--first {
+    margin-top: 5px;
+  }
 }
 
 select {
@@ -80,13 +80,18 @@ button:hover > #swap-icon {
   justify-content: center;
 }
 
+.conversions-text {
+  color: $error-light;
+  font-weight: bold;
+}
+
 ::ng-deep {
   convertir-page {
     input-editor {
       input {
         background-color: #404040;
         color: #fff;
-        height: 41px !important;
+        height: 42px !important;
       }
 
       .error-message-container {
