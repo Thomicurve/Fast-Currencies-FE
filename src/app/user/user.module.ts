@@ -7,6 +7,7 @@ import { PlanesComponent } from './planes/planes.component';
 import { HistorialComponent } from './historial/historial.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { InputEditorComponent } from '../core/components/input-editor/input-editor.component';
+import { CardPlanesComponent } from './components/card-planes/card-planes.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { InputEditorComponent } from '../core/components/input-editor/input-edit
   imports: [
     CommonModule,
     UserRoutingModule,
-    InputEditorComponent
+    InputEditorComponent,
+    CardPlanesComponent
   ]
 })
 export class UserModule { }

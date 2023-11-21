@@ -1,0 +1,42 @@
+@import 'src/assets/styles/variables.scss';
+
+.card-container {
+  width: 80vw;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: auto;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+
+h5 {
+  text-align: center;
+  font-size: 26px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+#plan-price {
+  color: $base-color;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#plan-requests {
+  color: $base-color-darker;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: $base-color;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+}

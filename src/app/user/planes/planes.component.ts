@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Plan } from '../models/plan';
 
 @Component({
   selector: 'planes-page',
@@ -6,5 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class PlanesComponent{
+
+  planes: Plan[] = [
+    {
+      id: 1,
+      description: 'Free',
+      price: 0,
+      maxRequests: 10
+    }
+  ];
+
   constructor() { }
 }

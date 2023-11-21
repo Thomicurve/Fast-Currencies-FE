@@ -8,6 +8,7 @@ import { PublicModule } from './public/public.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     PublicModule,
     AdminModule,
