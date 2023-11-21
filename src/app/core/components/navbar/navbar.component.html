@@ -4,6 +4,11 @@
         <span *ngIf="showSide" class="material-symbols-outlined">close</span>
     </button>
     <h2 class="app-title">FastCurrencies</h2>
+    <button *ngIf="userIsLogged" (click)="logout()" class="logout-button">
+        <span class="material-symbols-outlined">
+            exit_to_app
+        </span>
+    </button>
 </nav>
 
 <div (click)="showSide = false" *ngIf="showSide" class="background-dark"></div>
@@ -11,16 +16,20 @@
     <div class="side-bar-content">
         <h4>Menú</h4>
         <ul>
-            <li (click)="moveTo('/convertir')" class="side-bar-item"><span class="material-symbols-outlined">
+            <li (click)="moveTo('/convertir')" class="side-bar-item"><span
+                    class="material-symbols-outlined">
                     sync
                 </span>Convertir</li>
-            <li (click)="moveTo('/historial')" class="side-bar-item"><span class="material-symbols-outlined">
+            <li (click)="moveTo('/historial')" class="side-bar-item"><span
+                    class="material-symbols-outlined">
                     schedule
                 </span>Historial</li>
-            <li (click)="moveTo('/mi-perfil')" class="side-bar-item"><span class="material-symbols-outlined">
+            <li (click)="moveTo('/mi-perfil')" class="side-bar-item"><span
+                    class="material-symbols-outlined">
                     person
                 </span>Mi perfil</li>
-            <li (click)="moveTo('/planes')" class="side-bar-item"><span class="material-symbols-outlined">
+            <li (click)="moveTo('/planes')" class="side-bar-item"><span
+                    class="material-symbols-outlined">
                     payments
                 </span>Planes</li>
         </ul>

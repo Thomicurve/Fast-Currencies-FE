@@ -6,6 +6,7 @@ nav {
     background-color: $base-color;
     position: relative;
     z-index: 500;
+    justify-content: space-between;
 }
 
 .app-title {
@@ -24,6 +25,10 @@ nav {
     z-index: 100;
     top: 0;
     left: 0;
+}
+
+.logout-button {
+    justify-self: flex-end;
 }
 
 button {
