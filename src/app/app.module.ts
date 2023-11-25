@@ -8,7 +8,8 @@ import { PublicModule } from './public/public.module';
 import { AdminModule } from './admin/admin.module';
 import { UserModule } from './user/user.module';
 import { FooterComponent } from './core/components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,13 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent,
     FooterComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

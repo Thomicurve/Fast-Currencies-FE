@@ -33,7 +33,12 @@ select {
     font-size: 19px;
     font-weight: bold;
   }
-  margin-top: 100px;
+  margin-top: 70px;
+}
+
+.convert-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .result-text {
@@ -49,35 +54,57 @@ select {
   justify-content: center;
 }
 
+
+
 #swap-icon {
   transform: rotateZ(90deg);
   color: #fff;
   transition: transform .6s ease;
-  box-shadow: 0px 0px 40px 5px $base-color;
   border-radius: 50px;
 }
 
-button {
-  border: none;
-  border-radius: 50px;
-  background-color: $base-color;
-  height: 50px;
-  width: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-button:hover > #swap-icon {
-  transform: rotateZ(450deg);
-}
-
-.convert-button-container {
+.swap-button-container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  button {
+    border: none;
+    border-radius: 50px;
+    background-color: $base-color;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  button:hover > #swap-icon {
+    transform: rotateZ(450deg);
+  }
+
+  button[disabled]:hover > #swap-icon {
+    transform: rotateZ(90deg) !important;
+  }
+}
+
+button[disabled]{
+  filter: opacity(0.5);
+  cursor: inherit !important;
+}
+
+
+
+.convert-button {
+  border: none;
+  border-radius: 5px;
+  background-color: $base-color;
+  color: #fff;
+  padding: 5px 40px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .conversions-text {

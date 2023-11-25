@@ -1,40 +1,54 @@
 <h4>Convertir</h4>
 <div class="convertidor-container">
   <form autocomplete="off">
-    <p class="conversions-text">10 conversiones restantes.</p>
+    <p class="conversions-text">{{convertionsRemains}} conversion/es restantes.</p>
     <div class="selector-form selector-form--first">
-      <select name="currencies" class="currency-selector">
-        <option value>Tipo de moneda a convertir</option>
-        <option value="dolar">dolar</option>
-        <option value="euro">euro</option>
-        <option value="peso">peso</option>
+      <select
+        [disabled]="!convertionsRemains"
+        [(ngModel)]="currencyFrom"
+        name="currencies-symbol-from"
+        class="currency-selector">
+        <option value>Moneda que va a convertir</option>
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{currency.symbol}}</option>
       </select>
       <input-editor
+        [editable]="convertionsRemains > 0"
         placeholder="Valor"
         type="number"
         [(inputValue)]="currencyValueFrom"></input-editor>
     </div>
-    <div class="convert-button-container">
-      <button type="button"><span id="swap-icon" class="material-symbols-outlined">
+    <div class="swap-button-container">
+      <button
+        [disabled]="!convertionsRemains"
+        (click)="swapSymbols()"
+        type="button"><span id="swap-icon"
+          class="material-symbols-outlined">
           swap_horiz
         </span></button>
     </div>
     <div class="selector-form">
-      <select name="currencies" class="currency-selector">
-        <option value>Tipo de moneda a convertir</option>
-        <option value="dolar">dolar</option>
-        <option value="euro">euro</option>
-        <option value="peso">peso</option>
+      <select
+        [disabled]="!convertionsRemains"
+        [(ngModel)]="currencyTo"
+        name="currencies-symbol-to"
+        class="currency-selector">
+        <option value>Moneda a convertir</option>
+        <option *ngFor="let currency of currencies" [value]="currency.id">{{currency.symbol}}</option>
       </select>
-      <input-editor
-        placeholder="Valor"
-        type="number" [(inputValue)]="currencyValueTo"></input-editor>
+    </div>
+    <div class="convert-wrapper">
+      <button
+        (click)="convertCurrency()"
+        [disabled]="!convertionsRemains"
+        class="convert-button">Convertir</button>
     </div>
   </form>
   <div class="result-container">
     <p>Resultado</p>
     <div class="result-text">
-      {{currencyResult}}
+      <ng-container *ngIf="currencyResult">
+        {{currencyResult | currency}} {{currencyResultSymbol.symbol}}
+      </ng-container>
     </div>
   </div>
 </div>

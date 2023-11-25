@@ -8,6 +8,7 @@ import { HistorialComponent } from './historial/historial.component';
 import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { InputEditorComponent } from '../core/components/input-editor/input-editor.component';
 import { CardPlanesComponent } from './components/card-planes/card-planes.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { CardPlanesComponent } from './components/card-planes/card-planes.compon
     CommonModule,
     UserRoutingModule,
     InputEditorComponent,
-    CardPlanesComponent
+    CardPlanesComponent,
+    FormsModule
   ]
 })
 export class UserModule { }
