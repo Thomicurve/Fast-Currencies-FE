@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/core/models/user.model';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'mi-perfil-page',
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mi-perfil.component.scss']
 })
 
-export class MiPerfilComponent {
-  constructor() { }
+export class MiPerfilComponent implements OnInit {
+  userData = new User();
+
+  constructor(private userService: UserService) { }
+
+  ngOnInit(): void {
+    this.userService.getMyProfile()
+      .subscribe({
+        next: (user) => {
+          this.userData = user;
+        }
+      })
+  }
 
 }

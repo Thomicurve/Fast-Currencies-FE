@@ -1,1 +1,27 @@
-<h1>Mi perfil</h1>
+<h4>Mi perfil</h4>
+<div class="perfil-container">
+  <div class="field-container">
+    <label>Nombre</label>
+    <div>
+      {{userData.name}}
+    </div>
+  </div>
+  <div class="field-container">
+    <label>Email</label>
+    <div>
+      {{userData.email}}
+    </div>
+  </div>
+  <div class="field-container">
+    <label>Plan</label>
+    <div>
+      {{userData.subscriptionDescription}}
+    </div>
+  </div>
+  <div class="field-container">
+    <label>Conversiones restantes</label>
+    <div>
+      {{userData.requestsRemaining}}
+    </div>
+  </div>
+</div>
