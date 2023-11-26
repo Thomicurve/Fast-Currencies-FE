@@ -1,14 +1,20 @@
 <div class="card-container">
   <div class="card-header">
-    <h5>{{plan.description}}</h5>
+    <h5>{{subscription.name}}</h5>
   </div>
   <div class="card-body">
     <div class="card-body__text">
-      <p id="plan-price">{{plan.price}}$</p>
-      <p id="plan-requests">{{plan.maxRequests}} Conversiones de monedas por mes.</p>
+      <p id="plan-price">{{subscription.price}}$</p>
+      <p *ngIf="subscription.maxRequestsPerMonth != 0; else infiniteRequest"
+        id="plan-requests">{{subscription.maxRequestsPerMonth}} Conversiones de
+        monedas por mes.</p>
+      <ng-template #infiniteRequest>
+        <p id="plan-requests">Infinitas conversiones de por vida.</p>
+      </ng-template>
     </div>
     <div class="card-body__button">
-      <button type="button" class="btn btn--primary">Adquirir plan {{plan.description}}</button>
+      <button type="button" class="btn btn--primary">Adquirir plan
+        {{subscription.name}}</button>
     </div>
   </div>
 </div>

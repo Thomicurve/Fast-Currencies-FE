@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
-import { Plan } from '../models/plan';
+import { Component, OnInit } from '@angular/core';
+import { SubscriptionService } from 'src/app/core/services/subscription.service';
+import { Subscription } from 'src/app/core/models/subscription.model';
 
 @Component({
   selector: 'planes-page',
   templateUrl: 'planes.component.html'
 })
 
-export class PlanesComponent{
+export class PlanesComponent implements OnInit{
 
-  planes: Plan[] = [
-    {
-      id: 1,
-      description: 'Free',
-      price: 0,
-      maxRequests: 10
-    }
-  ];
+  subscriptions: Subscription[] = [];
 
-  constructor() { }
+  constructor(private subscriptionService: SubscriptionService) { }
+
+  ngOnInit(): void {
+    this.subscriptionService.getSubscriptions().subscribe((subscriptions) => {
+      this.subscriptions = subscriptions;
+    });
+  }
 }

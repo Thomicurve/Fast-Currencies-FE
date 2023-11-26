@@ -1,1 +1,23 @@
-<h1>Historial</h1>
+<h4>Historial</h4>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-header" scope="col">Fecha</th>
+        <th class="col-header" scope="col">Moneda origen</th>
+        <th class="col-header" scope="col">Moneda destino</th>
+        <th class="col-header" scope="col">Precio a convertir</th>
+        <th class="col-header" scope="col">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let conversion of conversions">
+        <td class="date-col">{{conversion.date | date: 'dd/MM/yyyy'}}</td>
+        <td>{{conversion.currencyFromSymbol}}</td>
+        <td>{{conversion.currencyToSymbol}}</td>
+        <td>{{conversion.priceToConvert | currency}}</td>
+        <td>{{conversion.convertedPrice | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -2,9 +2,9 @@
 
 .card-container {
   width: 80vw;
-  background-color: #fff;
+  background-color: #758DFF;
   border-radius: 10px;
-  margin: auto;
+  margin: 15px auto;
   padding: 15px 20px;
   box-sizing: border-box;
 }
@@ -12,6 +12,7 @@
 h5 {
   text-align: center;
   font-size: 26px;
+  color: #fff;
 }
 
 .card-body {
@@ -19,13 +20,13 @@ h5 {
 }
 
 #plan-price {
-  color: $base-color;
+  color: #fff;
   font-size: 24px;
   font-weight: bold;
 }
 
 #plan-requests {
-  color: $base-color-darker;
+  color: #f1f1f1;
   font-weight: 500;
   font-size: 14px;
 }

@@ -32,7 +32,7 @@ export class AuthService {
   }
 
   isLogged(): boolean {
-    return this.token.value.length > 0;
+    return !!this.token.value && !this.isTokenExpired();
   }
 
   isAdmin(): boolean {
@@ -42,5 +42,18 @@ export class AuthService {
   logout() {
     this.token.next('');
     localStorage.removeItem('token');
+  }
+
+  private isTokenExpired(): boolean {
+    if (!this.token.value) {
+      return true; 
+    }
+
+    // Decodificar el token para obtener la fecha de expiración
+    const tokenData = JSON.parse(atob(this.token.value.split('.')[1]));
+    const expirationDate = new Date(tokenData.exp * 1000); // Convertir a milisegundos
+
+    // Comparar la fecha de expiración con la fecha y hora actuales
+    return expirationDate <= new Date();
   }
 }
