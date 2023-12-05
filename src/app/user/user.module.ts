@@ -9,6 +9,7 @@ import { MiPerfilComponent } from './mi-perfil/mi-perfil.component';
 import { InputEditorComponent } from '../core/components/input-editor/input-editor.component';
 import { CardPlanesComponent } from './components/card-planes/card-planes.component';
 import { FormsModule } from '@angular/forms';
+import { PasarelaPagoComponent } from './pasarela-pago/pasarela-pago.component';
 
 
 @NgModule({
@@ -17,14 +18,15 @@ import { FormsModule } from '@angular/forms';
     PlanesComponent,
     HistorialComponent,
     MiPerfilComponent,
-    PlanesComponent
+    PasarelaPagoComponent    
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
     InputEditorComponent,
     CardPlanesComponent,
-    FormsModule
+    FormsModule,
+    InputEditorComponent
   ]
 })
 export class UserModule { }

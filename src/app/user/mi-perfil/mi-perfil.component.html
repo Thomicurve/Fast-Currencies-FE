@@ -21,7 +21,8 @@
   <div class="field-container">
     <label>Conversiones restantes</label>
     <div>
-      {{userData.requestsRemaining}}
+      {{userData.requestsRemaining == 0 && 
+      userData.subscriptionDescription == 'Pro' ? '♾️' : userData.requestsRemaining}}
     </div>
   </div>
 </div>

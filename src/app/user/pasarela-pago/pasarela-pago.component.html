@@ -1,0 +1,59 @@
+<h4>Pago</h4>
+<div class="pago-container">
+  <h2>Plan: <span>{{subcription.name}}</span></h2>
+  <h3>Precio final: {{subcription.price | currency}}</h3>
+  <form (submit)="pay()" #payForm="ngForm">
+    <div class="width-100">
+      <input-editor 
+        name="cardNumber" 
+        type="number" 
+        [isRequired]="true"
+        label="Número de tarjeta"
+        [(inputValue)]="cardNumber"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="securityCode" 
+        type="number" 
+        [isRequired]="true"
+        label="Código de seguridad"
+        [(inputValue)]="cvv"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="fechaVencimiento" 
+        type="date" 
+        [isRequired]="true"
+        label="Fecha de vencimiento"
+        [(inputValue)]="fechaVencimiento"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="titular" 
+        type="text" 
+        [isRequired]="true"
+        label="Titular"
+        [(inputValue)]="titular"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="dni" 
+        type="number" 
+        [isRequired]="true"
+        label="DNI"
+        [(inputValue)]="dni"
+        ></input-editor>
+    </div>
+    <div class="buttons">
+      <button 
+      [disabled]="!dni || !titular || !fechaVencimiento || !cardNumber || !cvv" 
+      type="submit" 
+      class="btn">Pagar</button>
+      <button (click)="cancel()" type="button" class="btn btn--cancel">Cancelar</button>
+    </div>
+  </form>
+</div>

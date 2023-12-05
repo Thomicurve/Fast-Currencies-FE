@@ -1,6 +1,6 @@
 <h4>Planes</h4>
 <div class="planes-container">
   <ng-container *ngFor="let sub of subscriptions">
-    <card-planes [subscription]="sub"></card-planes>
+    <card-planes [currentSubscription]="userSubscription" [subscription]="sub"></card-planes>
   </ng-container>
 </div>

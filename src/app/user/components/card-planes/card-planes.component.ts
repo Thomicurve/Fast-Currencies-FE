@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'src/app/core/models/subscription.model';
 
 @Component({
@@ -12,7 +13,11 @@ import { Subscription } from 'src/app/core/models/subscription.model';
 
 export class CardPlanesComponent {
   @Input() subscription: Subscription = new Subscription();
+  @Input() currentSubscription: string = '';
 
-  constructor() { }
+  constructor(private router: Router) { }
 
+  onSubscriptionClick() {
+    this.router.navigate(['/pasarela-pago', this.subscription.id])
+  }
 }

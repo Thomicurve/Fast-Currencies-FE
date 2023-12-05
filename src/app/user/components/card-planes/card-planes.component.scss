@@ -25,6 +25,13 @@ h5 {
   font-weight: bold;
 }
 
+.current-plan {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: $error-color;
+}
+
 #plan-requests {
   color: #f1f1f1;
   font-weight: 500;

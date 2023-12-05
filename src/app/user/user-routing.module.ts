@@ -24,7 +24,7 @@ const routes: Routes = [
     component: PlanesComponent
   },
   {
-    path: 'pasarela-pago',
+    path: 'pasarela-pago/:id',
     component: PasarelaPagoComponent
   },
   {

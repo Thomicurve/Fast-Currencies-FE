@@ -13,8 +13,15 @@
       </ng-template>
     </div>
     <div class="card-body__button">
-      <button type="button" class="btn btn--primary">Adquirir plan
+      <button
+        *ngIf="currentSubscription != subscription.name; else hasSubscription"
+        type="button" 
+        (click)="onSubscriptionClick()"
+        class="btn btn--primary">Adquirir plan
         {{subscription.name}}</button>
+      <ng-template #hasSubscription>
+        <p class="current-plan">Plan actual</p>
+      </ng-template>
     </div>
   </div>
 </div>

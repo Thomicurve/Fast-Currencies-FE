@@ -1,10 +1,10 @@
 <h4>Convertir</h4>
 <div class="convertidor-container">
   <form autocomplete="off">
-    <p class="conversions-text">{{convertionsRemains}} conversion/es restantes.</p>
+    <p *ngIf="subscriptionName != 'Pro'" class="conversions-text">{{convertionsRemains}} conversion/es restantes.</p>
     <div class="selector-form selector-form--first">
       <select
-        [disabled]="!convertionsRemains"
+        [disabled]="!convertionsRemains && subscriptionName != 'Pro'"
         [(ngModel)]="currencyFrom"
         name="currencies-symbol-from"
         class="currency-selector">
@@ -12,14 +12,14 @@
         <option *ngFor="let currency of currencies" [value]="currency.id">{{currency.symbol}}</option>
       </select>
       <input-editor
-        [editable]="convertionsRemains > 0"
+        [editable]="convertionsRemains > 0 || subscriptionName == 'Pro'"
         placeholder="Valor"
         type="number"
         [(inputValue)]="currencyValueFrom"></input-editor>
     </div>
     <div class="swap-button-container">
       <button
-        [disabled]="!convertionsRemains"
+        [disabled]="!convertionsRemains && subscriptionName != 'Pro'"
         (click)="swapSymbols()"
         type="button"><span id="swap-icon"
           class="material-symbols-outlined">
@@ -28,7 +28,7 @@
     </div>
     <div class="selector-form">
       <select
-        [disabled]="!convertionsRemains"
+        [disabled]="!convertionsRemains && subscriptionName != 'Pro'"
         [(ngModel)]="currencyTo"
         name="currencies-symbol-to"
         class="currency-selector">
@@ -39,7 +39,7 @@
     <div class="convert-wrapper">
       <button
         (click)="convertCurrency()"
-        [disabled]="!convertionsRemains"
+        [disabled]="!convertionsRemains && subscriptionName != 'Pro'"
         class="convert-button">Convertir</button>
     </div>
   </form>

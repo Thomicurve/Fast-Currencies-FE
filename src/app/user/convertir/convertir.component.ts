@@ -22,6 +22,7 @@ export class ConvertirComponent implements OnInit {
   currencies: Currency[] = [];
 
   convertionsRemains: number;
+  subscriptionName: string;
   
   constructor(
     private userService: UserService,
@@ -39,6 +40,7 @@ export class ConvertirComponent implements OnInit {
   getRequestsRemaining() {
     this.userService.getMyProfile().subscribe((user) => {
       this.convertionsRemains = user.requestsRemaining;
+      this.subscriptionName = user.subscriptionDescription
     });
   }
 

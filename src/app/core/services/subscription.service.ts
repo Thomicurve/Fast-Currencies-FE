@@ -14,4 +14,9 @@ export class SubscriptionService {
     const url = API_URL + this.apiPrefix;
     return this.http.get<Subscription[]>(url);
   }
+
+  updateSubscription(subId: number) {
+    const url = API_URL + this.apiPrefix + '/update-subscription';
+    return this.http.post(url, { subscriptionId: subId});
+  }
 }
