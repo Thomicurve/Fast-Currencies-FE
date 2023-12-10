@@ -4,7 +4,8 @@ nav {
     display: flex;
     align-items: center;
     background-color: $base-color;
-    position: relative;
+    position: fixed;
+    top: 0px;
     z-index: 10000;
     justify-content: space-between;
 }
@@ -59,10 +60,11 @@ button {
 .side-bar {
     background-color: $base-color-darker;
     position: fixed;
+    top: 15px;
     z-index: 1000;
     height: 100vh;
     width: 350px;
-    transform: translateX(-100%);
+    transform: translateX(-101%);
     transition: transform 0.3s ease-in-out;
 }
 
