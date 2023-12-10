@@ -16,6 +16,25 @@ export class CurrencyService {
     return this.http.get<Currency[]>(url);
   }
 
+  getCurrencyById(currencyId: number): Observable<Currency> {
+    const url = API_URL + this.apiPrefix + "/" + currencyId;
+    return this.http.get<Currency>(url);
+  }
+
+  addNewCurrency(currency: Currency): Observable<any> {
+    const url = API_URL + this.apiPrefix;
+    return this.http.post(url, currency);
+  }
+
+  updateCurrency(currency: Currency): Observable<any> {
+    const url = API_URL + this.apiPrefix;
+    return this.http.put(url, currency);
+  }
+
+  deleteCurrency(currencyId: number): Observable<any> {
+    const url = API_URL + this.apiPrefix + "/" + currencyId;
+    return this.http.delete(url);
+  }
 
   convertCurrency(convertCurrency: ConvertCurrency): Observable<any>  {
     const url = API_URL + this.apiPrefix + "/convert";

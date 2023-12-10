@@ -1,0 +1,37 @@
+<h4>Monedas</h4>
+<div class="add-button-wrapper">
+  <button (click)="addNewCurrency()">Agregar nueva +</button>
+</div>
+<div class="table-container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th class="col-header" scope="col">Leyenda</th>
+        <th class="col-header" scope="col">Símbolo</th>
+        <th class="col-header" scope="col">IC</th>
+        <th class="col-header" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let currency of currencies">
+        <td>{{currency.leyend}}</td>
+        <td>{{currency.symbol}}</td>
+        <td>{{currency.ic}}</td>
+        <td>
+          <button (click)="onEdit(currency)" class="action-buttons"><span class="material-symbols-outlined">
+            edit
+            </span></button>
+          <button (click)="delete(currency.id)" class="action-buttons">
+            <span class="material-symbols-outlined">
+              delete
+              </span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-container *ngIf="showModal">
+  <app-moneda-edit (closeModal)="closeModal($event)" [currency]="selectedCurrency"></app-moneda-edit>
+</ng-container>

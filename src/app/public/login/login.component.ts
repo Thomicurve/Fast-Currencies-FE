@@ -20,9 +20,9 @@ export class LoginComponent {
 
   login() {
     this.authService.login(this.loginInput).subscribe({
-      next: (res) => {
+      next: async (res) => {
         this.alertService.showSuccessAlert("Inicio de sesión exitoso");
-        this.authService.setToken(res.token);
+        await this.authService.setToken(res.token);
         this.router.navigate(['/']);
       },
       error: (err) => {

@@ -16,6 +16,11 @@
     <div class="side-bar-content">
         <h4>Menú</h4>
         <ul>
+            <li *ngIf="isAdmin" (click)="moveTo('/admin/monedas')"
+                class="side-bar-item"><span
+                    class="material-symbols-outlined">
+                    monetization_on
+                </span>Monedas</li>
             <li (click)="moveTo('/convertir')" class="side-bar-item"><span
                     class="material-symbols-outlined">
                     sync
@@ -24,14 +29,14 @@
                     class="material-symbols-outlined">
                     schedule
                 </span>Historial</li>
-            <li (click)="moveTo('/mi-perfil')" class="side-bar-item"><span
-                    class="material-symbols-outlined">
-                    person
-                </span>Mi perfil</li>
             <li (click)="moveTo('/planes')" class="side-bar-item"><span
                     class="material-symbols-outlined">
                     payments
                 </span>Planes</li>
+            <li (click)="moveTo('/mi-perfil')" class="side-bar-item"><span
+                    class="material-symbols-outlined">
+                    person
+                </span>Mi perfil</li>
         </ul>
     </div>
 </div>

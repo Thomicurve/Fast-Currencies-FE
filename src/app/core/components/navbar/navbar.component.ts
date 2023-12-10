@@ -14,12 +14,16 @@ import { Router, RouterModule } from '@angular/router';
 export class NavbarComponent implements OnInit {
     showSide: boolean = false;
     userIsLogged: boolean = false;
+    isAdmin: boolean = false;
+
     constructor(private authService: AuthService, private router: Router) { }
 
-    ngOnInit(): void {
-        this.authService.token$.subscribe((token) => {
+    async ngOnInit() {
+        this.authService.token.subscribe((token) => {
             this.userIsLogged = token !== '';
         });
+
+        this.authService.isUserAdmin.subscribe((isAdmin) => this.isAdmin = isAdmin);
     }
 
     moveTo(path: string) {

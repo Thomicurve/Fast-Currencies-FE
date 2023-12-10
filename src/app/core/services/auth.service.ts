@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Login } from 'src/app/public/models/login.model';
 import { Register } from 'src/app/public/models/register.model';
 import { API_URL } from '../constants';
@@ -8,12 +8,19 @@ import { API_URL } from '../constants';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
-  private token = new BehaviorSubject<string>('');
-  public token$ = this.token.asObservable();
+  public token = new BehaviorSubject<string>('');
 
+  public isUserAdmin = new Subject<boolean>();
 
   constructor(private http: HttpClient) {
     this.token.next(localStorage.getItem('token') || '');
+
+    // Si el token existe validamos si es admin
+    if(this.token.value) {
+      this.isAdmin();
+    } else {
+      this.isUserAdmin.next(false);
+    }
   }
 
   login(loginInput: Login): Observable<any> {
@@ -26,8 +33,9 @@ export class AuthService {
     return this.http.post(url, registerInput)
   }
 
-  setToken(token: string) {
+  async setToken(token: string) {
     this.token.next(token);
+    await this.isAdmin();
     localStorage.setItem('token', token);
   }
 
@@ -35,8 +43,16 @@ export class AuthService {
     return !!this.token.value && !this.isTokenExpired();
   }
 
-  isAdmin(): boolean {
-    return false;
+  async isAdmin(): Promise<boolean> {
+    const url = API_URL + '/auth/role-admin';
+    const result = await fetch(url, {
+      headers: {
+        'Authorization': 'Bearer ' + this.token.value
+      }
+    });
+    const data: boolean = await result.json();
+    this.isUserAdmin.next(data);
+    return data;
   }
 
   logout() {

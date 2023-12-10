@@ -1,0 +1,56 @@
+@import 'src/assets/styles/variables.scss';
+
+h3 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.background-dark {
+  background-color: #0000006e;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+}
+
+.modal-container {
+  background: linear-gradient(to right, $base-color-light, $base-color);
+  width: 90vw;
+  position: absolute;
+  top: 250px;
+  left: calc(50% - (90vw / 2));
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 15px 25px;
+  z-index: 100;
+}
+
+.buttons {
+  display: flex;
+  column-gap: 10px;
+}
+.btn {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background-color: $base-color;
+  color: #fff;
+  margin-top: 15px;
+  cursor: pointer;
+
+  &--cancel {
+    background-color: $error-light;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-container {
+    width: 60vw;
+    left: calc(50% - (60vw / 2));
+
+  }
+}

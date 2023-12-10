@@ -23,6 +23,5 @@ export class HistorialComponent implements OnInit {
           console.error(err);
         }
       })
-    throw new Error('Method not implemented.');
   }
 }

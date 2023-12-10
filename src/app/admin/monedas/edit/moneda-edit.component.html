@@ -1,0 +1,40 @@
+<div class="modal-container">
+  <h3>Cargar moneda</h3>
+  <form #loginForm="ngForm" (ngSubmit)="updateCurrency()">
+    <div class="width-100">
+      <input-editor 
+        name="leyend" 
+        type="text" 
+        [isRequired]="true"
+        [(inputValue)]="currency.leyend"
+        label="Leyenda"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="symbol" 
+        type="text" 
+        [isRequired]="true"
+        [(inputValue)]="currency.symbol"
+        label="Símbolo"
+        ></input-editor>
+    </div>
+    <div class="width-100">
+      <input-editor 
+        name="ic" 
+        type="number" 
+        [isRequired]="true"
+        [(inputValue)]="currency.ic"
+        label="IC"
+        ></input-editor>
+    </div>
+    <div class="buttons">
+      <button 
+        [disabled]="!currency.symbol || !currency.ic || !currency.leyend" 
+        class="btn" 
+        type="submit">Enviar</button>
+      <button class="btn btn--cancel" (click)="close()" type="button">Cancelar</button>
+    </div>
+  </form>
+</div>
+<div class="background-dark"></div>

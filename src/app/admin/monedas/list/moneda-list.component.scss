@@ -1,0 +1,102 @@
+@import 'src/assets/styles/variables.scss';
+
+.table-container {
+  width: 95vw;
+  margin: 0 auto;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.table-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: rgb(78, 78, 78); 
+  border-radius: 20px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: rgb(36, 36, 36); 
+  border-radius: 20px;       
+  border: 3px solid rgb(78, 78, 78);  
+}
+
+thead {
+  tr {
+    background-color: #646464;
+  }
+
+  th {
+    border-left: 1px solid #5B5B5B;
+    border-right: 1px solid #5B5B5B;
+  }
+}
+
+.date-col {
+  width: 100px;
+}
+
+table {
+  background-color: #363636;
+  width: 100%;
+  border-spacing: 0 !important;
+  overflow: hidden;
+  border-radius: 5px !important;
+}
+
+tbody {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  max-height: 5vh;
+}
+
+td {
+  border: 1px solid #5B5B5B;
+  padding: 10px 0px;
+  gap: 0px;
+  overflow-x: auto;
+
+  &:last-child {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+  }
+}
+
+.col-header {
+  color: #fff;
+  font-weight: 500;
+  font-size: 13px;
+  padding: 10px 5px;
+}
+
+.add-button-wrapper {
+  width: 95vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: $base-color-light;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+.action-buttons {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  span {
+    font-size: 26px;
+    color: #fff;
+  }
+}
